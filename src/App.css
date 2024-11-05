@@ -1,0 +1,22 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --bgColor: #f9fafe;
+
+}
+
+
+body{
+  background-image: url(./assets/bg-pattern.svg);
+  background-color: var(--bgColor);
+  background-repeat: no-repeat;
+  height: 100vh;
+  
+}
+body.dark{
+  background-image: none;
+}

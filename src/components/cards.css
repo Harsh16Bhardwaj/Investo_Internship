@@ -1,0 +1,226 @@
+:root {
+    --primary-color: #293356; 
+    --hover-color: #181e33; 
+    --slider-thumb-color: #6acdc1; 
+    --slider-thumb-hover-color: #20968c; 
+    --toggle-bg-color: hsl(223, 50%, 87%);
+    --toggle-active-bg-color: #7ee8dd;  
+    --shadow-color: rgba(0, 0, 0, 0.04);
+    --content-color: var(--content); 
+    --primaryWhite: #fff;
+  }
+  
+  /* Global styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Manrope";
+  }
+  body.dark{
+    --primary-color: #36d1bf; 
+    --hover-color: #37d2c0d1; 
+    --slider-thumb-color: #6acdc1; 
+    --slider-thumb-hover-color: #20968c; 
+    --toggle-bg-color: hsl(223, 50%, 87%);
+    --toggle-active-bg-color: #7ee8dd;  
+    --shadow-color: #20968c7c;
+    --content-color: #20968c; 
+    --primaryWhite: #131010;
+  }
+  
+  /* Slider styles */
+  .customRange {
+    -webkit-appearance: none;
+    border-radius: 20px;
+    opacity: 0.7;
+    transition: opacity 0.2s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .customRange:hover {
+    opacity: 1;
+  }
+  
+  .h1 {
+    color: var(--primary-color);
+  }
+  
+  .customRange::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 35px;
+    height: 35px;
+    background-color: var(--slider-thumb-hover-color);
+    box-shadow: 0px 0px 3px 1px #26ada2ab;
+    border-radius: 50%;
+    background-image: url("../../src/assets/slider.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: 200ms ease-in-out;
+  }
+  
+  .customRange::-webkit-slider-thumb:hover {
+    background-color: var(--slider-thumb-hover-color);
+    box-shadow: 0px 3px 10px 2px #26ada1;
+  }
+  
+  
+  
+  /* Toggle switch styles */
+  .toggle-container {
+    display: flex;
+    justify-content: center;
+    width: 40px;
+    height: 20px;
+    background-color: var(--toggle-bg-color);
+    border-radius: 15px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .toggle-button {
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    margin-left: 4px;
+    margin-right: 1px;
+    margin-top: 4px;
+    transition: transform 0.3s;
+  }
+  
+  .toggle-container.active {
+    background-color: var(--toggle-active-bg-color);
+    transition: 200ms ease-in-out;
+  }
+  
+  .toggle-container.active .toggle-button {
+    transform: translateX(19px);
+    transition: 400ms ease-in-out;
+  }
+  
+  /* Checkmark styles */
+  .check {
+    background-image: url("../assets/icon-check.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 14px;
+    width: 14px;
+  }
+  
+  /* Button styles */
+  .trial-btn {
+    background-color: var(--primary-color);
+    border: none;
+    color: var(--primaryWhite);
+    text-align: center;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0px 2px 1px 1px var(--primary-color);
+  }
+  
+  .trial-btn:hover {
+    background-color: var(--hover-color);
+    box-shadow: 0px 3px 10px 1px var(--primary-color);
+    transition: 200ms ease-in-out;
+  }
+  
+  /* Text styles */
+  .pageView {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: var(--content-color);
+  }
+  
+  .span1::before {
+    content: '25% discount';
+  }
+  
+  
+  /* Card styles */
+  .cards {
+    width: 40%;
+    z-index: 2;
+    background-color: var(--primaryWhite);
+    box-shadow: 0px 2.7px 4.8px var(--shadow-color),
+                0px 8.9px 16.1px var(--shadow-color),
+                0px 40px 72px var(--shadow-color);
+  }
+  
+  @media only screen and (max-width: 1106px) { 
+      .cards{
+        width: 50%;
+      }
+      .toggleSection{
+        justify-content: center;
+        align-items: center;
+      }
+  }
+  @media only screen and (max-width: 940px) { 
+      .cards{
+        width: 60%;
+      }
+  }
+  @media only screen and (max-width: 768px) { 
+      .cards{
+        width: 55%;
+        padding: 1.4rem;
+      }
+      .addInfo{
+        padding-top: 0rem;
+        flex-direction: column;
+        >div>button{
+          margin-top: 10px;
+        }
+      }
+      .infoContent{
+        align-items: center;
+      }
+      .span1::before {
+        content: '-25%';
+      }
+      .pricing{
+          flex-direction: column;
+          gap: 1rem;
+      }
+  }
+  
+  @media only screen and (max-width: 610px) {
+    .cards{
+      width: 70%;
+    }
+    .toggleSection{
+      justify-content: center;
+      align-items: center;
+    }
+    .toggleCont{
+      font-size: 0.7rem;
+    }
+  }
+  @media only screen and (max-width: 465px) {
+    .cards{
+      width: 80%;
+    }
+    .trial-btn{
+      padding: 0.4rem;
+      font-size: 0.7rem;
+      padding-left: 1.4rem;
+      padding-right: 1.4rem;
+    }
+  }
+  @media only screen and (max-width:405px) {
+    .cards{
+      width: 90%;
+    }
+  }
+  @media only screen and (min-width: 360px) {
+   .toggleSection{
+    gap: 0.4rem;
+   }   
+  }

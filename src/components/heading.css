@@ -1,0 +1,136 @@
+:root{
+    --heading: #2b324d;
+    --content: #7e8493;
+    --slider-thumb-color: #e8cb28fb; 
+
+}
+
+body.dark{
+    background-color: #333;
+    --heading: #ffffff;
+    --content: #e7e7e7;
+    --slider-thumb-color: #6acdc1fc; 
+
+    .circlePattern{
+        opacity: 0.4;
+    }
+}
+
+
+
+.circlePattern{
+    width: 9rem;
+    height: 9rem;
+    background-image: url(../assets/pattern-circles.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    z-index: 1;
+}
+
+*{
+    font-family: "Manrope";
+}
+
+.introP{
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--content);
+}
+.introH{
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--heading);
+}
+.theme-toggle {
+    top: 20px;
+    right: 20px;
+    position: fixed;
+    width: auto;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    animation: pulsate infinite 2s ease-in-out;
+    transition: 300ms ease-in-out;
+}
+
+.theme-toggle img {
+    width: 40px;
+    border-radius: 50%;
+    transition: 0.2s ease-in-out;
+}
+.theme-toggle:hover{
+    background-color: var(--slider-thumb-color);
+    box-shadow: 0px 0px 15px 3px var(--slider-thumb-color);
+    animation: step-end;
+    transform: scale(1.1);
+    transform: rotate(180deg);
+    transition: 0.3s ease-in-out;
+}
+@keyframes pulsate {
+    from{
+        box-shadow: 0px 0px 10px 3px var(--slider-thumb-color);
+    }
+    50%{
+        box-shadow: none;
+    }  
+    100%{
+        box-shadow: 0px 0px 10px 3px var(--slider-thumb-color);
+    } 
+}
+
+@media only screen and (max-width: 768px) {
+    
+    .theme-toggle {
+        position: fixed;
+        width: auto;
+        border: none;
+        cursor: pointer;
+        /* padding: 10px; */
+    }
+    .theme-toggle img{
+        width: 30px;
+    }
+
+    body{
+        padding: 0rem;
+    }
+    .circlePattern{
+        width: 6rem;
+        height: 6rem;
+        background-size: contain;
+    }
+    .introP{
+        font-size: 12px;
+        padding-left: 5rem;
+        padding-right: 5rem;
+        margin-top: -0.3rem;
+    }
+    .introH{
+        font-size: 22px;
+    }
+
+}
+
+@media only screen and (max-width: 375px) {
+    .theme-toggle {
+        box-shadow: 0px 0px 2px 1px var(--slider-thumb-color);
+        animation: step-end;
+    }
+    .circlePattern{
+        width: 6rem;
+        height: 6rem;
+        background-size: contain;
+    }
+    .introP{
+        font-size: 12px;
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+    .introH{
+        font-size: 18px;
+    }
+}
+
