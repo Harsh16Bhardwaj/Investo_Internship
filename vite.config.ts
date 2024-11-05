@@ -3,6 +3,6 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: 'Invisto_Internship',
+  base: 'Investo_Internship',
   plugins: [react()],
 })
